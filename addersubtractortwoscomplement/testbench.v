@@ -11,15 +11,15 @@ integer NEGATIVE;
 
 fulladdsubtract4 FS_4(OPERATION, SUM, C_OUT, A, B, C_IN);
 
-always @(*)
+always @(*) //whenever values change
 begin
-    if (OPERATION == 1 && C_OUT == 0)
+    if (OPERATION == 1 && C_OUT == 0) //This just says if we're doing subtraction, and the addition used to perform that subtraction didn't produce a carry-out, then A < B, so the result is negative.
     begin
-        NEGATIVE = $signed(SUM);
+        NEGATIVE = $signed(SUM); //convert the sum to a negative number
     end
     else
     begin
-        NEGATIVE = SUM;
+        NEGATIVE = SUM; //negative is just the decimal version of sum
     end
 end
 
