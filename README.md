@@ -1,1 +1,1 @@
-# verilog_progression
+Journey through learning Verilog and FPGAS :)
