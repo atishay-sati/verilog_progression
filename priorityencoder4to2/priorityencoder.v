@@ -12,6 +12,6 @@ output y1, y2;
 //this block checks if any of them are equal to 1, and if not, return x
 //if they are, return the corresponding value
 assign y1 = (i3 | i2 | i1 | i0) ? (i3 | i2) : 1'bx;
-assign y2 = (i3 | i2 | i1 | i0) ? (i3 | i1) : 1'bx;
+assign y2 = (i3 | i2 | i1 | i0) ? (i3 | (~i2 & i1)) : 1'bx;
 
 endmodule
