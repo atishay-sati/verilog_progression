@@ -18,5 +18,13 @@ nand #1(q2barprime, qbarprime, clk);
 nand #1(q, q2prime, qbar);
 nand #1(qbar, q2barprime, q);
 
+// ALTERNATIVE SOLUTION: behavioral D flip-flop using always @(posedge clk)
+
+//always @(posedge clk)   // runs only at the instant clk rises from 0 to 1
+//    q <= d;             // sample d at that instant and store it in q (nonblocking, as is standard for flip-flops)
+                        // between rising edges nothing triggers this block, so q holds its value
+ 
+//assign qbar = ~q;       // qbar is always the inverse of q
+
 
 endmodule
